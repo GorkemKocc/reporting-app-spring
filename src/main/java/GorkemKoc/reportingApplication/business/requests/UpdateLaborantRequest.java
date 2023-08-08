@@ -1,0 +1,29 @@
+package GorkemKoc.reportingApplication.business.requests;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class UpdateLaborantRequest {
+    @NotNull
+    @NotBlank
+    private int id;
+    private String firstName;
+    private String lastName;
+    @Size(min = 7, max = 7, message = "7 Haneli olmalı.")
+    @NotBlank
+    @NotNull
+    private String hospitalIdNumber;
+    @NotNull
+    @NotBlank
+    private String userName;
+    @NotNull
+    @NotBlank
+    private String password;
+}
